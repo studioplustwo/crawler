@@ -1,14 +1,14 @@
 baseurl: '/'
 permalink: pretty
-title: 'スタジオ・プラスツーのクローラー開発ソリューション'
+title: 'SPTクローラー開発ソリューション'
 
 logo:
-  mobile: "images/logo/logo-mobile.svg"
-  mobile_height: "32px"
-  mobile_width: "32px"
-  desktop: "images/logo/logo.svg"
-  desktop_height: "32px"
-  desktop_width: "120px"
+  mobile: "images/logo/spt_logo.png"
+  mobile_height: "44px"
+  mobile_width: "96px"
+  desktop: "images/logo/spt_logo.png"
+  desktop_height: "44px"
+  desktop_width: "96px"
 
 home: 
   limit_services: 6
@@ -49,3 +49,4 @@ exclude:
   - LICENSE.md
   - LICENSE
   - README.md
+

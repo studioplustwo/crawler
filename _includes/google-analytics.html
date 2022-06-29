@@ -1,26 +1,30 @@
 {% if jekyll.environment == "production" %}
-    {% assign gid = site.env.NETLIFY_GOOGLE_ANALYTICS_ID %}
-    {% if gid %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ gid }}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', '{{ $gid }}');
-    </script>
-    {% elsif site.data.seo.google_analytics_id %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.data.seo.google_analytics_id }}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', '{{ site.data.seo.google_analytics_id }}');
-    </script>
-    {% endif %}
+{% if site.data.seo.google_analytics_id %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.data.seo.google_analytics_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', '{{ site.data.seo.google_analytics_id }}');
+</script>
+<!-- Event snippet for 問い合わせ conversion page
+     In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+  function gtag_report_conversion(url) {
+      var callback = function () {
+          if (typeof(url) != 'undefined') {
+              window.location = url;
+          }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-986710810/aN_aCN7e4gsQmobA1gM',
+          'event_callback': callback
+      });
+      return false;
+  }
+</script>
+{% endif %}
 {% endif %}

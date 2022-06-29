@@ -22,48 +22,91 @@ bodyClass: "page-home"
 </div>
 
 <div class="strip">
-  <div class="container pt-6 pb-6 pb-md-10">
+  <div class="container pt-0 pb-6 pb-md-10">
     <div class="row justify-content-start">
+      <div class="col-12 col-md-12 mb-1">
+	<h1>本サービスの特徴</h1>
+      </div>
       {% assign limit = site.home.limit_services | default: 6 %}
       {% for service in site.services limit: limit %}
       <div class="col-12 col-md-4 mb-1">
         <div class="service service-summary">
           <div class="service-content">
             <h2 class="service-title">
-              <a href="{{ service.url | relative_url }}">{{ service.title }}</a>
+              {{ service.title }}
             </h2>
-            <p>{{ service.content | markdownify | strip_html | truncate: 100 }}</p>
+            <p>{{ service.content | markdownify }}</p>
           </div>
         </div>
       </div>
       {% endfor %}
     </div>
-    <div class="row justify-content-center">
-      <div class="col-auto">
-        <a class="button button-primary" href="{{ "services" | relative_url }}">View All Services</a>
-      </div>
-    </div>
   </div>
 </div>
 
-{% if site.data.features %}
-<div class="strip strip-grey">
-  <div class="container pt-6 pb-6 pt-md-10 pb-md-10">
-    <div class="row justify-content-center">
-
-      {% for feature in site.data.features %}
-      <div class="col-12 col-md-6 col-lg-4 mb-2">
-        <div class="feature">
-          {% if feature.image %}
-          <div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.image.url | relative_url }}" width="{{ feature.image.width }}" height="{{ feature.image.height }}" /></div>
-          {% endif %}
-          <h2 class="feature-title">{{ feature.title }}</h2>
-          <div class="feature-content">{{ feature.description }}</div>
+<div class="strip">
+  <div class="container pt-0 pb-6 pb-md-10">
+    <div class="row justify-content-start">
+      <div class="col-12 col-md-12 mb-1">
+        <h1>お見積り例</h1>
+      </div>
+      <div class="col-12 col-md-6 mb-1">
+        <div class="service service-summary">
+          <div class="service-content">
+            <h2 class="service-title">
+              お見積り例(1)
+            </h2>
+	    <img src="/images/estimate1.png" width="400" height="300" style="border: 1px solid #ccc;"/>
+	    <p>
+	      <ul style="line-height:26px;color:#5c5a5a;">
+		<li>定期的に更新される対象のウェブサイトをクローリング</li>
+		<li>クロール結果はサーバ上にファイルとして出力</li>
+		<li>合計 180,000円(税抜)</li>
+	      </ul>
+	    </p>
+          </div>
         </div>
       </div>
-      {% endfor %}
-
+      <div class="col-12 col-md-6 mb-1">
+        <div class="service service-summary">
+          <div class="service-content">
+            <h2 class="service-title">
+              お見積り例(2)
+            </h2>
+	    <img src="/images/estimate2.png" width="400" height="300" style="border: 1px solid #ccc;"/>
+	    <p>
+	      <ul style="line-height:26px;color:#5c5a5a;">
+		<li>定期的に更新される対象ウェブサイト(10サイト程度)をクローリングして、DBにデータを自動蓄積したい</li>
+		<li>データの一覧表示、検索、各種マスタデータの管理ができる最低限の機能を持った管理画面</li>
+		<li>外部システムとの連携用のAPI</li>
+		<li>合計 1,630,000円(税抜)</li>
+	      </ul>
+	    </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-{% endif %}
+
+<div class="strip">
+  <div class="container pt-0 pb-6 pb-md-10">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-12 mb-1">
+	<h1>お問い合わせ</h1>
+      </div>
+      <div class="col-12 col-md-12 mb-1">
+	<div class="call">
+	  <div class="call-box-top">
+	    <div>
+	      SPTクローラー開発ソリューションについての<br />お問い合わせ・資料請求はこちら
+	    </div>
+	  </div>
+	  <div class="call-box-bottom">
+	    <a target="_blank" rel="noopener noreferrer" class="button" onclick="gtag_report_conversion('https://docs.google.com/forms/d/1mNGK3Mp8ST9UV0g77V7qaytdyGsWyWgVYbFY5DxdZlU')" style="cursor:pointer;">問い合わせ</a>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>

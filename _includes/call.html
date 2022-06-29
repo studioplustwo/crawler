@@ -10,10 +10,15 @@
       </a>
     </div>
     {% endif %}
+    {% if site.data.contact.text %}
+    <div>
+      {{ site.data.contact.text }}
+    </div>
+    {% endif %}
   </div>
-    {% if include.show_button %}
-      <div class="call-box-bottom">
-        <a href="{{ site.data.contact.contact_button_link }}" class="button">Contact</a>
-      </div>
+  {% if include.show_button %}
+  <div class="call-box-bottom">
+    <a target="_blank" rel="noopener noreferrer" class="button" onclick="gtag_report_conversion('https://docs.google.com/forms/d/1mNGK3Mp8ST9UV0g77V7qaytdyGsWyWgVYbFY5DxdZlU')" style="cursor:pointer;">問い合わせ</a>
+  </div>
     {% endif %}
 </div>

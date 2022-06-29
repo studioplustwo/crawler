@@ -1,21 +1,9 @@
 main:
-  - name: "Services"
-    url: "/services/"
-    weight: 2
-  - name: "Team"
-    url: "/team/"
-    weight: 3
-  - name: "About"
-    url: "/about/"
-    weight: 4
-  - name: "Contact"
-    url: "/contact/"
-    weight: 5
+  - name: "About us"
+    url: "https://studioplustwo.jp/"
+    weight: 1
 
 footer:
-  - name: "Home"
-    url: "/"
+  - name: "About us"
+    url: "https://studioplustwo.jp/"
     weight: 1
-  - name: "Contact"
-    url: "/contact/"
-    weight: 2
